@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"sTimeBar",
   "bboxMode":0,
-  "bbox_bottom":21,
+  "bbox_bottom":65,
   "bbox_left":0,
-  "bbox_right":65,
+  "bbox_right":9,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":22,
+  "height":66,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"e830deb3-742e-4a6c-ae35-9cec045aeed9","blendMode":0,"displayName":"default","isLocked":false,"name":"e830deb3-742e-4a6c-ae35-9cec045aeed9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":66,
+  "width":10,
 }
