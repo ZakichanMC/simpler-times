@@ -1,0 +1,9 @@
+timeFrames = 0;
+var _bar1 = instance_create_layer(48,8,"Instances",oTimeFill);
+_bar1.type = "sec";
+var _bar2 = instance_create_layer(48,40,"Instances",oTimeFill);
+_bar2.type = "halfsec";
+var _bar3 = instance_create_layer(48,72,"Instances",oTimeFill);
+_bar3.type = "quartsec";
+var _bar4 = instance_create_layer(48,104,"Instances",oTimeFill);
+_bar4.type = "twelfthsec";

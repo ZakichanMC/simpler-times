@@ -1,0 +1,2 @@
+type = "";
+timeFrames = 0;
