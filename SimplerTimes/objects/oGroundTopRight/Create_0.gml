@@ -1,0 +1,1 @@
+tileType = tiles.topRightCorner;
