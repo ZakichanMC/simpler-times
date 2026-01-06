@@ -1,6 +1,6 @@
 leftmost = x;
-rightmost = x + 120;
-dir = 1;
+rightmost = x + 240;
+dir = 4;
 
 currentTimer = "";
 numFrames = 0;

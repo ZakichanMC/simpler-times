@@ -1,4 +1,7 @@
-if type == sec timeFrames += 1;
+if type == sec {
+	timeFrames += 1;
+	//show_debug_message(timeFrames);
+}
 else if type == halfsec timeFrames += 2;
 else if type == quartsec timeFrames += 4;
 else if type == twelfthsec timeFrames += 12;

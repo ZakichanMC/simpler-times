@@ -1,2 +1,2 @@
-destination = 336;
+destination = 64;
 spd = 5;

@@ -3,17 +3,23 @@ if array_length(oTimer.timersList) > 0 {
 }
 
 if not crumbling {
+	respawnTimer = 60;
 	if currentTimer == twelfthsec numFrames = 5;
 	else if currentTimer == quartsec numFrames = 15;
 	else if currentTimer == halfsec numFrames = 30;
 	else if currentTimer == sec numFrames = 60; //change this later
 }
-else {
+else { // once we start standing on it, tick down
 	numFrames--;
 }
 
-if numFrames = 0 {
+// when we've ran out of time to stand
+if numFrames <= 0 {
 	collidable = false;
+	respawnTimer--;
+}
+
+if respawnTimer <= 0 {
+	collidable = true;
 	crumbling = false;
 }
-else if oTimeFill.timeFrames == 0 collidable = true;
