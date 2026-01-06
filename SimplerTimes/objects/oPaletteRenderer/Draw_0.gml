@@ -5,7 +5,7 @@ with oGround {
 	var _h = sprite_height div 16;
 	for (var i=0;i<_w;i++) {
 		for (var j=0;j<_h;j++) {
-			draw_text(x+i*16,y+j*16,string(tileType));
+			draw_sprite(sCavemanPalette,tileType,x+i*16,y+j*16);
 		}
 	}
 }

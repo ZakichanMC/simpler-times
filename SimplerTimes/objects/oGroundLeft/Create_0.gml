@@ -1,1 +1,1 @@
-tileType = tiles.blank;
+tileType = tiles.leftEdge;

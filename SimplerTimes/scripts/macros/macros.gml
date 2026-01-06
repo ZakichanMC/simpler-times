@@ -12,5 +12,9 @@ enum tiles {
 	leftEdge,
 	rightEdge,
 	topEdge,
-	bottomEdge
+	bottomEdge,
+	bottomLeftInnerCorner,
+	bottomRightInnerCorner,
+	topLeftInnerCorner,
+	topRightInnerCorner
 }
