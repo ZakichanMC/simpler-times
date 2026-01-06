@@ -1,7 +1,9 @@
 randomize();
 global.initialSeed = random_get_seed();
 global.palette = sCavemanPalette;
-global.paletteGroundVariants = sCavemanGroundVariants
+global.paletteGroundVariants = sCavemanGroundVariants;
+global.palettes = [sSteampunkPalette,sCyberPalette,sApocalypticPalette];
+global.variants= [sSteampunkGroundVariants,sCyberGroundVariants,sApocalypticGroundVariants];
 
 global.roomscale = 4;
 timeFrames = 0;
