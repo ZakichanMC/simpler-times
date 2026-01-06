@@ -193,7 +193,7 @@ else if place_meeting(x,y,oRoomTransition34) {
 }
 else if place_meeting(x,y,oRoomTransition43) {
 	room_goto(Room3);
-	x = 448;
+	x = 480;
 	y = 240;
 }
 

@@ -1,3 +1,8 @@
+randomize();
+global.initialSeed = random_get_seed();
+global.palette = sCavemanPalette;
+global.paletteGroundVariants = sCavemanGroundVariants
+
 global.roomscale = 4;
 timeFrames = 0;
 var _bar1 = instance_create_layer(1152,144,"Instances",oTimeFill);

@@ -68,6 +68,7 @@
     {"id":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
     {"id":{"name":"sBlinkingPlatform","path":"sprites/sBlinkingPlatform/sBlinkingPlatform.yy",},},
+    {"id":{"name":"sCavemanGroundVariants","path":"sprites/sCavemanGroundVariants/sCavemanGroundVariants.yy",},},
     {"id":{"name":"sCavemanPalette","path":"sprites/sCavemanPalette/sCavemanPalette.yy",},},
     {"id":{"name":"sCrumblingPlatform","path":"sprites/sCrumblingPlatform/sCrumblingPlatform.yy",},},
     {"id":{"name":"sGround","path":"sprites/sGround/sGround.yy",},},
