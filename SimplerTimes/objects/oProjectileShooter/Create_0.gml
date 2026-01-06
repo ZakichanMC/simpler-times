@@ -1,0 +1,2 @@
+currentTimer = "";
+numFrames = 0;

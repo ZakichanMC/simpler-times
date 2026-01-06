@@ -8,3 +8,5 @@ terminalVY = 10;
 
 origCoyoteTime = 6;
 coyoteTime = origCoyoteTime; 
+
+standingOnCrumble = false;
