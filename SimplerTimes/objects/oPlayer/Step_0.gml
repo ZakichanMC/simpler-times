@@ -48,133 +48,143 @@ if jumpKey and coyoteTime > 0 {
 }
 
 // horiz collision
-if place_meeting(x+vx,y,oGround) { 
-	while !place_meeting(x+sign(vx),y,oGround) { 
-		x += sign(vx); 
-	} 
-	vx = 0; 
-} 
-if place_meeting(x+vx,y,oBlinkingPlatform) and oBlinkingPlatform.collidable { 
-	while !place_meeting(x+sign(vx),y,oBlinkingPlatform) { 
-		x += sign(vx); 
-	} 
-	vx = 0; 
-} 
-if place_meeting(x+vx,y,oCrumblingPlatform) and oCrumblingPlatform.collidable { 
-	while !place_meeting(x+sign(vx),y,oCrumblingPlatform) { 
-		x += sign(vx); 
-	} 
-	vx = 0; 
+if (vx != 0 && place_meeting(x+vx, y, oGround)) {
+    repeat (abs(vx) + 1) {
+	    if (!place_meeting(x+sign(vx), y, oGround)) {
+	        x += sign(vx);
+	    } else break;
+	}
+    vx = 0;
 }
-if place_meeting(x+vx,y,oMovingPlatform) { 
-	while !place_meeting(x+sign(vx),y,oMovingPlatform) { 
-		x += sign(vx); 
-	} 
-	vx = 0; 
-} 
-if place_meeting(x+vx,y,oProjectileShooter) { 
-	while !place_meeting(x+sign(vx),y,oProjectileShooter) { 
-		x += sign(vx); 
-	} 
-	vx = 0; 
-} 
+if (vx != 0 && place_meeting(x+vx, y, oBlinkingPlatform) and oBlinkingPlatform.collidable) {
+    repeat (abs(vx) + 1) {
+	    if (!place_meeting(x+sign(vx), y, oBlinkingPlatform)) {
+	        x += sign(vx);
+	    } else break;
+	}
+    vx = 0;
+}
+if (vx != 0 && place_meeting(x+vx, y, oCrumblingPlatform) and oCrumblingPlatform.collidable) {
+    repeat (abs(vx) + 1) {
+	    if (!place_meeting(x+sign(vx), y, oCrumblingPlatform)) {
+	        x += sign(vx);
+	    } else break;
+	}
+    vx = 0;
+}
+if (vx != 0 && place_meeting(x+vx, y, oMovingPlatform)) {
+    repeat (abs(vx) + 1) {
+	    if (!place_meeting(x+sign(vx), y, oMovingPlatform)) {
+	        x += sign(vx);
+	    } else break;
+	}
+    vx = 0;
+}
+
+if (vx != 0 && place_meeting(x+vx, y, oProjectileShooter)) {
+	repeat (abs(vx) + 1) {
+	    if (!place_meeting(x+sign(vx), y, oMovingPlatform)) {
+	        x += sign(vx);
+	    } else break;
+	}
+	vx = 0;
+}
 
 // vert collision
-if place_meeting(x,y+vy,oGround) { 
-	while !place_meeting(x,y+sign(vy),oGround) { 
-		y += sign(vy); 
-	} 
+if vy != 0 and place_meeting(x,y+vy,oGround) { 
+	repeat (abs(vy) + 1) {
+	    if (!place_meeting(x,y+sign(vy), oGround)) {
+	        y += sign(vy);
+	    } else break;
+	}
 	vy = 0; 
 } 
-if place_meeting(x,y+vy,oBlinkingPlatform) and oBlinkingPlatform.collidable { 
-	while !place_meeting(x,y+sign(vy),oBlinkingPlatform) { 
-		y += sign(vy); 
-	} 
+if vy != 0 and place_meeting(x,y+vy,oBlinkingPlatform) and oBlinkingPlatform.collidable { 
+	repeat (abs(vy) + 1) {
+	    if (!place_meeting(x,y+sign(vy), oBlinkingPlatform)) {
+	        y += sign(vy);
+	    } else break;
+	}
 	vy = 0; 
 } 
-if place_meeting(x, y+vy, oCrumblingPlatform) {
+if vy != 0 place_meeting(x, y+vy, oCrumblingPlatform) {
     var plat = instance_place(x, y+vy, oCrumblingPlatform);
     if (plat != noone && plat.collidable) {
-        while !place_meeting(x, y+sign(vy), plat) {
-            y += sign(vy);
-        }
+        repeat (abs(vy) + 1) {
+		    if (!place_meeting(x,y+sign(vy), plat)) {
+		        y += sign(vy);
+		    } else break;
+		}
         vy = 0;
         plat.crumbling = true;
     }
 }
-if place_meeting(x,y+vy,oMovingPlatform) { 
-	while !place_meeting(x,y+sign(vy),oMovingPlatform) { 
-		y += sign(vy); 
-	} 
+if vy != 0 and place_meeting(x,y+vy,oMovingPlatform) { 
+	repeat (abs(vy) + 1) {
+	    if (!place_meeting(x,y+sign(vy), oMovingPlatform)) {
+	        y += sign(vy);
+	    } else break;
+	}
 	vy = 0; 
 	vx += oMovingPlatform.vx;
 }
-if place_meeting(x,y+vy,oProjectileShooter) { 
-	while !place_meeting(x,y+sign(vy),oProjectileShooter) { 
-		y += sign(vy); 
-	} 
+if vy != 0 and place_meeting(x,y+vy,oProjectileShooter) { 
+	repeat (abs(vy) + 1) {
+	    if (!place_meeting(x,y+sign(vy), oProjectileShooter)) {
+	        y += sign(vy);
+	    } else break;
+	}
 	vy = 0; 
 } 
 
 // STUPID HENRY FIX FOR GETTING STUCK IN BLOCK
-if (
-	place_meeting(x,y,oGround) or
-	(place_meeting(x,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
-	place_meeting(x,y,oMovingPlatform) or
-	place_meeting(x,y,oProjectileShooter) or (place_meeting(x,y,oCrumblingPlatform) and instance_place(x,y,oCrumblingPlatform).collidable)
-) {
-	var hx = 0;
-	var vxu = 0;
+if (is_solid_at(x, y))
+{
+	var hx = 9999;
+	var vyu = 9999;
+	var maxd = 32;
 
-	// measure horizontal escape
-	var d = 0;
-	while place_meeting(x-d,y,oGround) or
-		(place_meeting(x-d,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
-		place_meeting(x-d,y,oMovingPlatform) or
-		place_meeting(x-d,y,oProjectileShooter) or (place_meeting(x-d,y,oCrumblingPlatform) and instance_place(x-d,y,oCrumblingPlatform).collidable) {
-		d++;
-		if (d > 100) break;
+	// left
+	for (var d = 1; d <= maxd; d++)
+	{
+		if (!is_solid_at(x - d, y)) { hx = -d; break; }
 	}
-	hx = -d;
 
-	d = 0;
-	while place_meeting(x+d,y,oGround) or
-		(place_meeting(x+d,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
-		place_meeting(x+d,y,oMovingPlatform) or
-		place_meeting(x+d,y,oProjectileShooter) or (place_meeting(x+d,y,oCrumblingPlatform) and instance_place(x+d,y,oCrumblingPlatform).collidable) {
-		d++;
-		if (d > 100) break;
+	// right
+	for (var d = 1; d <= maxd; d++)
+	{
+		if (!is_solid_at(x + d, y))
+		{
+			if (abs(d) < abs(hx)) hx = d;
+			break;
+		}
 	}
-	if (abs(d) < abs(hx) or hx == 0) hx = d;
 
-	// measure vertical escape
-	d = 0;
-	while place_meeting(x,y-d,oGround) or
-		(place_meeting(x,y-d,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
-		place_meeting(x,y-d,oMovingPlatform) or
-		place_meeting(x,y-d,oProjectileShooter) or (place_meeting(x,y-d,oCrumblingPlatform) and instance_place(x,y-d,oCrumblingPlatform).collidable) {
-		d++;
-		if (d > 100) break;
+	// up
+	for (var d = 1; d <= maxd; d++)
+	{
+		if (!is_solid_at(x, y - d)) { vyu = -d; break; }
 	}
-	vxu = -d;
 
-	d = 0;
-	while place_meeting(x,y+d,oGround) or
-		(place_meeting(x,y+d,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
-		place_meeting(x,y+d,oMovingPlatform) or
-		place_meeting(x,y+d,oProjectileShooter) or
-		(place_meeting(x,y+d,oCrumblingPlatform) and instance_place(x,y+d,oCrumblingPlatform).collidable) {
-		d++;
-		if (d > 100) break;
+	// down
+	for (var d = 1; d <= maxd; d++)
+	{
+		if (!is_solid_at(x, y + d))
+		{
+			if (abs(d) < abs(vyu)) vyu = d;
+			break;
+		}
 	}
-	if (abs(d) < abs(vxu) or vxu == 0) vxu = d;
 
-	// snap along shortest axis
-	if abs(hx) <= abs(vxu) {
+	// snap shortest
+	if (abs(hx) < abs(vyu))
+	{
 		x += hx;
 		vx = 0;
-	} else {
-		y += vxu;
+	}
+	else
+	{
+		y += vyu;
 		vy = 0;
 	}
 }

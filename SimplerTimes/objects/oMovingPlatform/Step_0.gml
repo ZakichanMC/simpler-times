@@ -12,3 +12,7 @@ else if x == rightmost dir = -4;
 
 vx = (60 div numFrames) * dir;
 x += vx;
+
+if global.palette == sCyberPalette sprite_index = sCyberMoving;
+else if global.palette == sSteampunkPalette sprite_index = sSteampunkMoving;
+else if global.palette == sCavemanPalette sprite_index = sCavemanMoving;

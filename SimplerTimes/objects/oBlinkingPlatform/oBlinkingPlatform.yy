@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBlinkingPlatform",
-    "path":"sprites/sBlinkingPlatform/sBlinkingPlatform.yy",
+    "name":"sApocalypticBlinking",
+    "path":"sprites/sApocalypticBlinking/sApocalypticBlinking.yy",
   },
   "spriteMaskId":null,
   "visible":true,

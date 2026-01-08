@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sCrumblingPlatform",
-    "path":"sprites/sCrumblingPlatform/sCrumblingPlatform.yy",
+    "name":"sApocalypticCrumbling",
+    "path":"sprites/sApocalypticCrumbling/sApocalypticCrumbling.yy",
   },
   "spriteMaskId":null,
   "visible":true,

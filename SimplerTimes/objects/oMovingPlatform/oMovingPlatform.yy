@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sMovingPlatform",
-    "path":"sprites/sMovingPlatform/sMovingPlatform.yy",
+    "name":"sApocalypticMoving",
+    "path":"sprites/sApocalypticMoving/sApocalypticMoving.yy",
   },
   "spriteMaskId":null,
   "visible":true,

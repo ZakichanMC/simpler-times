@@ -9,3 +9,7 @@ else if currentTimer == halfsec numFrames = 30;
 else if currentTimer == sec numFrames = 60; //change this later
 
 if oTimeFill.timeFrames < numFrames collidable = true;
+
+if global.palette == sCyberPalette sprite_index = sCyberBlinking;
+else if global.palette == sSteampunkPalette sprite_index = sSteampunkBlinking;
+else if global.palette == sCavemanPalette sprite_index = sCavemanBlinking;
