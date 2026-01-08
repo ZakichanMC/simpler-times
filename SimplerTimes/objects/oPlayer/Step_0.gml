@@ -100,7 +100,7 @@ if (
 	place_meeting(x,y,oGround) or
 	(place_meeting(x,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
 	place_meeting(x,y,oMovingPlatform) or
-	place_meeting(x,y,oProjectileShooter)// or(place_meeting(x,y,oCrumblingPlatform) and instance_place(x,y,oCrumblingPlatform).collidable)
+	place_meeting(x,y,oProjectileShooter) or (place_meeting(x,y,oCrumblingPlatform) and instance_place(x,y,oCrumblingPlatform).collidable)
 ) {
 	var hx = 0;
 	var vxu = 0;
@@ -110,7 +110,7 @@ if (
 	while place_meeting(x-d,y,oGround) or
 		(place_meeting(x-d,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
 		place_meeting(x-d,y,oMovingPlatform) or
-		place_meeting(x-d,y,oProjectileShooter) { // or (place_meeting(x-d,y,oCrumblingPlatform) and instance_place(x-d,y,oCrumblingPlatform).collidable) {
+		place_meeting(x-d,y,oProjectileShooter) or (place_meeting(x-d,y,oCrumblingPlatform) and instance_place(x-d,y,oCrumblingPlatform).collidable) {
 		d++;
 		if (d > 100) break;
 	}
@@ -120,7 +120,7 @@ if (
 	while place_meeting(x+d,y,oGround) or
 		(place_meeting(x+d,y,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
 		place_meeting(x+d,y,oMovingPlatform) or
-		place_meeting(x+d,y,oProjectileShooter) {// or (place_meeting(x+d,y,oCrumblingPlatform) and instance_place(x+d,y,oCrumblingPlatform).collidable) {
+		place_meeting(x+d,y,oProjectileShooter) or (place_meeting(x+d,y,oCrumblingPlatform) and instance_place(x+d,y,oCrumblingPlatform).collidable) {
 		d++;
 		if (d > 100) break;
 	}
@@ -131,7 +131,7 @@ if (
 	while place_meeting(x,y-d,oGround) or
 		(place_meeting(x,y-d,oBlinkingPlatform) and oBlinkingPlatform.collidable) or
 		place_meeting(x,y-d,oMovingPlatform) or
-		place_meeting(x,y-d,oProjectileShooter) { //or (place_meeting(x,y-d,oCrumblingPlatform) and instance_place(x,y-d,oCrumblingPlatform).collidable) 
+		place_meeting(x,y-d,oProjectileShooter) or (place_meeting(x,y-d,oCrumblingPlatform) and instance_place(x,y-d,oCrumblingPlatform).collidable) {
 		d++;
 		if (d > 100) break;
 	}

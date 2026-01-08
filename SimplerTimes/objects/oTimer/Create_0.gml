@@ -1,9 +1,17 @@
 randomize();
 global.initialSeed = random_get_seed();
-global.palette = sCavemanPalette;
-global.paletteGroundVariants = sCavemanGroundVariants;
-global.palettes = [sSteampunkPalette,sCyberPalette,sApocalypticPalette];
-global.variants= [sSteampunkGroundVariants,sCyberGroundVariants,sApocalypticGroundVariants];
+global.palette = sApocalypticPalette;
+global.paletteGroundVariants = sApocalypticGroundVariants;
+global.palettes = [sCyberPalette,sSteampunkPalette,sCavemanPalette];
+global.variants= [sCyberGroundVariants,sSteampunkGroundVariants,sCavemanGroundVariants];
+global.bg = sApocalypticBG;
+global.parallax1 = sApocalypticParallax1;
+global.parallax2 = sApocalypticParallax2;
+global.vignette = sApocalypticVignette;
+global.bgs = [sCyberBG,sSteampunkBG,sCavemanBG];
+global.parallax1s = [sCyberParallax1,sSteampunkParallax1,sCavemanParallax1];
+global.parallax2s = [sCyberParallax2,sSteampunkParallax2,sCavemanParallax2];
+global.vignettes = [sCyberVignette,sSteampunkVignette,sCavemanVignette];
 
 global.roomscale = 4;
 timeFrames = 0;
