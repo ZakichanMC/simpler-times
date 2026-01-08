@@ -5,6 +5,8 @@ spd = 4;
 jumping = false;
 jumpHeight = 8;
 terminalVY = 10;
+currentDir = 1;
+onGround = false;
 
 origCoyoteTime = 6;
 coyoteTime = origCoyoteTime; 

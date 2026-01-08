@@ -1,24 +1,45 @@
 leftKey = -keyboard_check(ord("A")); 
 rightKey = keyboard_check(ord("D")); 
 jumpKey = keyboard_check_pressed(vk_space);
+if keyboard_check_pressed(ord("A")) currentDir = -1;
+else if keyboard_check_pressed(ord("D")) currentDir = 1;
 
 vx = spd * (leftKey+rightKey); 
+// animation
+if onGround { // on ground
+	if vx == 0 {
+		if currentDir == -1 sprite_index = sPlayerIdleL;
+		if currentDir == 1 sprite_index = sPlayerIdleR;
+	}
+	else {
+		if vx < 0 sprite_index = sPlayerWalkL;
+		else sprite_index = sPlayerWalkR;
+	}
+}
+else {
+	if currentDir == -1 sprite_index = sPlayerJumpL;
+	else if currentDir == 1 sprite_index = sPlayerJumpR;
+}
+
 if (vy < terminalVY) { //terminal velocity
 	vy += grav; 
 }
 
 // coyote time
 if place_meeting(x,y+1,oGround) or (place_meeting(x,y+1,oBlinkingPlatform) and oBlinkingPlatform.collidable) or place_meeting(x,y+1,oMovingPlatform) or place_meeting(x,y+1,oProjectileShooter) { //if on ground
+	onGround = true;
 	coyoteTime = origCoyoteTime;
 }
 else if place_meeting(x, y+1, oCrumblingPlatform) {
     var plat = instance_place(x, y+1, oCrumblingPlatform);
     if (plat != noone && plat.collidable) {
+		onGround = true;
         coyoteTime = origCoyoteTime;
         plat.crumbling = true;
     }
 }
 else {
+	onGround = false;
 	coyoteTime--;
 }
 if jumpKey and coyoteTime > 0 {
