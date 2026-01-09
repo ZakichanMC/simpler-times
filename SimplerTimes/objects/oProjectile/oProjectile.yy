@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sProjectile",
-    "path":"sprites/sProjectile/sProjectile.yy",
+    "name":"sApocalypticProjectile",
+    "path":"sprites/sApocalypticProjectile/sApocalypticProjectile.yy",
   },
   "spriteMaskId":null,
   "visible":true,
