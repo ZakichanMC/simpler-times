@@ -10,8 +10,10 @@ if not crumbling {
 	else if currentTimer == sec numFrames = 60; //change this later
 }
 else { // once we start standing on it, tick down
-	x = origX + irandom_range(-1,1);
-	y = origY + irandom_range(-1,1);
+	var _offsetX = irandom_range(-1,1);
+	var _offsetY = irandom_range(-1,1)
+	x = origX + _offsetX;
+	y = origY + _offsetY;
 	numFrames--;
 }
 

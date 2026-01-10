@@ -1,3 +1,6 @@
+timePassed++;
+y = origY + sin((timePassed/1000)*spd) * amplitude;
+
 if place_meeting(x,y,oPlayer) {
 	if array_length(oTimer.timersList) > 1 {
 		var _bar = oTimer.timersList[array_length(oTimer.timersList)-1];

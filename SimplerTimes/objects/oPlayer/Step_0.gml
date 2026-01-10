@@ -230,17 +230,9 @@ else if place_meeting(x,y,oRoomTransition43) {
 
 //placeholder high jump
 if keyboard_check_pressed(ord("V")) vy -= 15;
+//spikes collision
 if place_meeting(x,y,oSpikes) {
-	if room == Room2 {
-		x = 352;
-		y = 224;
-	}
-	else if room == Room3 {
-		x = 384;
-		y = 224;
-	}
-	else if room == Room4 {
-		x = 480;
-		y = 160;
-	}
+	deathCount++;
+	x = respawnX;
+	y = respawnY;
 }

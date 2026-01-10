@@ -12,3 +12,8 @@ origCoyoteTime = 6;
 coyoteTime = origCoyoteTime; 
 
 standingOnCrumble = false;
+
+respawnX = 32;
+respawnY = 224;
+
+deathCount = 0;

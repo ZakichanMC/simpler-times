@@ -29,3 +29,8 @@ timersList = [_bar1,_bar2,_bar3,_bar4];
 timerActive = twelfthsec;
 
 upgradesList = array_create(3,false);
+
+win = false;
+timeFrames = 0;
+timeMins = 0;
+timeSecs = 0;
