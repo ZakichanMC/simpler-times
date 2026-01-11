@@ -1,4 +1,3 @@
 type = "";
 timeFrames = 0;
-barScale = 2;
-
+barScale = 1;

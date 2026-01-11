@@ -34,3 +34,22 @@ function is_solid_at(_x, _y)
 
 	return false;
 }
+
+function draw_text_outlined(_x, _y, _outline_color, _text_color, _string, _outline_width) { 
+  
+	//Outline  
+	draw_set_color(_outline_color);  
+	draw_text(_x+_outline_width, _y+_outline_width, _string);  
+	draw_text(_x-_outline_width, _y-_outline_width, _string);  
+	draw_text(_x,   _y+_outline_width, _string);  
+	draw_text(_x+_outline_width,   _y, _string);  
+	draw_text(_x,   _y-_outline_width, _string);  
+	draw_text(_x-_outline_width,   _y, _string);  
+	draw_text(_x-_outline_width, _y+_outline_width, _string);  
+	draw_text(_x+_outline_width, _y-_outline_width, _string);  
+  
+	//Text  
+	draw_set_color(_text_color);  
+	draw_text(_x, _y, _string);
+
+}

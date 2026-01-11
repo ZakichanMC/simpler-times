@@ -8,6 +8,7 @@ if keyboard_check_pressed(vk_enter) and array_length(timersList) > 1 {
 	global.parallax1 = array_shift(global.parallax1s);
 	global.parallax2 = array_shift(global.parallax2s);
 	global.vignette = array_shift(global.vignettes);
+	oWorldClock.image_index += 1;
 }
 
 if not win {
@@ -22,6 +23,9 @@ if not win {
 		timeSecs = 0;
 	}
 }
+
+if fadeToBlack and fadeOpacity < 1 fadeOpacity += 0.01;
+if fadeOpacity >= 1 win = true;
 
 // restart game
 if keyboard_check_pressed(ord("R")) {
