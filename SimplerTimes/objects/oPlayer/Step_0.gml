@@ -1,6 +1,6 @@
 leftKey = -(keyboard_check(ord("A")) or keyboard_check(vk_left)); 
 rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right); 
-jumpKey = keyboard_check_pressed(vk_space) or keyboard_check_pressed(vk_up);
+jumpKey = keyboard_check_pressed(vk_space) or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
 if keyboard_check_pressed(ord("A")) or keyboard_check_pressed(vk_left) currentDir = -1;
 else if keyboard_check_pressed(ord("D")) or keyboard_check_pressed(vk_right) currentDir = 1;
 
@@ -227,7 +227,7 @@ else if place_meeting(x,y,oRoomTransition43) {
 }
 
 //placeholder high jump
-if keyboard_check_pressed(ord("V")) vy -= 15;
+//if keyboard_check_pressed(ord("V")) vy -= 15;
 //spikes and projectile collision
 if place_meeting(x,y,oSpikes) or place_meeting(x,y,oProjectile) {
 	audio_play_sound(sfxDeath,1,false);

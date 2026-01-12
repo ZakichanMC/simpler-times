@@ -1,4 +1,5 @@
 randomize();
+audio_play_sound(maintheme,0,true);
 global.initialSeed = random_get_seed();
 global.palette = sApocalypticPalette;
 global.paletteGroundVariants = sApocalypticGroundVariants;
@@ -37,6 +38,7 @@ timeSecs = 0;
 
 fadeToBlack = false;
 fadeOpacity = 0;
+winThemePlayed = false;
 
 holdingR = false;
 origRFrames = 60;

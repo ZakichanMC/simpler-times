@@ -1,4 +1,4 @@
-if keyboard_check_pressed(vk_enter) and array_length(timersList) > 1 {
+/*if keyboard_check_pressed(vk_enter) and array_length(timersList) > 1 {
 	var _bar = timersList[array_length(timersList)-1];
 	array_delete(timersList,array_length(timersList)-1,1);
 	instance_destroy(_bar);
@@ -10,6 +10,7 @@ if keyboard_check_pressed(vk_enter) and array_length(timersList) > 1 {
 	global.vignette = array_shift(global.vignettes);
 	oWorldClock.image_index += 1;
 }
+*/
 
 if not win {
 	timeFrames++;
@@ -24,7 +25,14 @@ if not win {
 	}
 }
 
-if fadeToBlack and fadeOpacity < 1 fadeOpacity += 0.01;
+if fadeToBlack {
+	audio_stop_sound(maintheme);
+	if fadeOpacity < 1 fadeOpacity += 0.01;
+	if !winThemePlayed {
+		audio_play_sound(sfxWin,1,false);
+		winThemePlayed = true;
+	}
+}
 if fadeOpacity >= 1 win = true;
 
 // restart game
