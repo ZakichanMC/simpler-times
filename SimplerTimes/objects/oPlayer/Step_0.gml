@@ -1,8 +1,8 @@
-leftKey = -keyboard_check(ord("A")); 
-rightKey = keyboard_check(ord("D")); 
-jumpKey = keyboard_check_pressed(vk_space);
-if keyboard_check_pressed(ord("A")) currentDir = -1;
-else if keyboard_check_pressed(ord("D")) currentDir = 1;
+leftKey = -(keyboard_check(ord("A")) or keyboard_check(vk_left)); 
+rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right); 
+jumpKey = keyboard_check_pressed(vk_space) or keyboard_check_pressed(vk_up);
+if keyboard_check_pressed(ord("A")) or keyboard_check_pressed(vk_left) currentDir = -1;
+else if keyboard_check_pressed(ord("D")) or keyboard_check_pressed(vk_right) currentDir = 1;
 
 vx = spd * (leftKey+rightKey); 
 // animation
