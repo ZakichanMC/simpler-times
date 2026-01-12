@@ -29,5 +29,14 @@ if fadeOpacity >= 1 win = true;
 
 // restart game
 if keyboard_check_pressed(ord("R")) {
-	game_restart();
+	holdingR = true;
 }
+if keyboard_check_released(ord("R")) {
+	holdingR = false;
+}
+if holdingR {
+	rFrames--;
+}
+else rFrames = origRFrames;
+
+if rFrames <= 0 game_restart();

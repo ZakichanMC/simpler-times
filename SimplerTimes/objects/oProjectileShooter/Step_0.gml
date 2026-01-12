@@ -8,6 +8,7 @@ else if currentTimer == halfsec numFrames = 30;
 else if currentTimer == sec numFrames = 60; //change this later
 
 if oTimeFill.timeFrames mod numFrames == 0 {
+	if not oTimer.fadeToBlack audio_play_sound(sfxProjectile,1,false);
 	var _proj = instance_create_layer(x+8,y+7,"Instances",oProjectile);
 	_proj.depth = depth+1;
 }

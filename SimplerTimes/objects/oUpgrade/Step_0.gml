@@ -3,6 +3,7 @@ y = origY + sin((timePassed/1000)*spd) * amplitude;
 
 if place_meeting(x,y,oPlayer) {
 	if array_length(oTimer.timersList) > 1 {
+		audio_play_sound(sfxUpgrade,1,false);
 		var _bar = oTimer.timersList[array_length(oTimer.timersList)-1];
 		array_delete(oTimer.timersList,array_length(oTimer.timersList)-1,1);
 		global.palette = array_shift(global.palettes);

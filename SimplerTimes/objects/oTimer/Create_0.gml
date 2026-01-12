@@ -37,3 +37,7 @@ timeSecs = 0;
 
 fadeToBlack = false;
 fadeOpacity = 0;
+
+holdingR = false;
+origRFrames = 60;
+rFrames = origRFrames;

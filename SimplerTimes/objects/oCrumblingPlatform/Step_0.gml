@@ -4,16 +4,14 @@ if array_length(oTimer.timersList) > 0 {
 
 if not crumbling {
 	respawnTimer = 60;
+	image_index = 0;
 	if currentTimer == twelfthsec numFrames = 5;
 	else if currentTimer == quartsec numFrames = 15;
 	else if currentTimer == halfsec numFrames = 30;
 	else if currentTimer == sec numFrames = 60; //change this later
 }
 else { // once we start standing on it, tick down
-	var _offsetX = irandom_range(-1,1);
-	var _offsetY = irandom_range(-1,1)
-	x = origX + _offsetX;
-	y = origY + _offsetY;
+	image_index = irandom(8);
 	numFrames--;
 }
 
@@ -30,6 +28,6 @@ if respawnTimer <= 0 {
 	crumbling = false;
 }
 
-if global.palette == sCyberPalette sprite_index = sCyberCrumbling;
-else if global.palette == sSteampunkPalette sprite_index = sSteampunkCrumbling;
-else if global.palette == sCavemanPalette sprite_index = sCavemanCrumbling;
+if global.palette == sCyberPalette sprite_index = sCyberCrumblingNew;
+else if global.palette == sSteampunkPalette sprite_index = sSteampunkCrumblingNew;
+else if global.palette == sCavemanPalette sprite_index = sCavemanCrumblingNew;

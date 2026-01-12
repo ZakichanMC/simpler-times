@@ -12,6 +12,7 @@ if onGround { // on ground
 		if currentDir == 1 sprite_index = sPlayerIdleR;
 	}
 	else {
+		if oTimer.timeFrames mod 20 == 0 audio_play_sound(sfxWalk,1,false);
 		if vx < 0 sprite_index = sPlayerWalkL;
 		else sprite_index = sPlayerWalkR;
 	}
@@ -194,10 +195,7 @@ y += vy;
 
 // projectile hit detection
 //sprite_index = sPlayer;
-if place_meeting(x,y,oProjectile) {
-	x = 32;
-	y = 224;
-}
+
 
 // room transitions
 if place_meeting(x,y,oRoomTransition12) {
@@ -230,8 +228,9 @@ else if place_meeting(x,y,oRoomTransition43) {
 
 //placeholder high jump
 if keyboard_check_pressed(ord("V")) vy -= 15;
-//spikes collision
-if place_meeting(x,y,oSpikes) {
+//spikes and projectile collision
+if place_meeting(x,y,oSpikes) or place_meeting(x,y,oProjectile) {
+	audio_play_sound(sfxDeath,1,false);
 	deathCount++;
 	x = respawnX;
 	y = respawnY;

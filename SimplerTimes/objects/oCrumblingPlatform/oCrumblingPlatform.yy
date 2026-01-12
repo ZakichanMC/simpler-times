@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sApocalypticCrumbling",
-    "path":"sprites/sApocalypticCrumbling/sApocalypticCrumbling.yy",
+    "name":"sApocalypticCrumblingNew",
+    "path":"sprites/sApocalypticCrumblingNew/sApocalypticCrumblingNew.yy",
   },
   "spriteMaskId":null,
   "visible":true,
